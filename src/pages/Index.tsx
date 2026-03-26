@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 
 const HERO_IMAGE = "https://cdn.poehali.dev/projects/086c0f03-6c71-4aec-8d84-879347c40c62/files/2e03b96c-fca3-43a4-ac2c-83fb9edf3d6f.jpg";
+const LOGO_IMAGE = "https://cdn.poehali.dev/projects/086c0f03-6c71-4aec-8d84-879347c40c62/files/70c1b42f-45e0-4a2b-a80e-f5f61dc10bf8.jpg";
 
 // Magenta accent
 const M = "hsl(315,100%,55%)";
@@ -77,9 +78,12 @@ export default function Index() {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "backdrop-blur-sm border-b" : ""}`}
         style={scrolled ? { background: "rgba(13,0,20,0.92)", borderColor: "rgba(255,0,170,0.15)" } : {}}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="#" className="font-display text-2xl font-bold tracking-widest">
-            <span className="text-gradient">ИГРА</span>
-            <span className="text-[hsl(300,20%,95%)]"> РАЗУМА</span>
+          <a href="#" className="flex items-center gap-2">
+            <img src={LOGO_IMAGE} alt="Игра Разума" className="w-9 h-9 rounded object-cover" style={{ filter: "saturate(1.3) brightness(1.1)" }} />
+            <span className="font-display text-xl font-bold tracking-widest">
+              <span className="text-gradient">ИГРА</span>
+              <span className="text-[hsl(300,20%,95%)]"> РАЗУМА</span>
+            </span>
           </a>
           <div className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map((l) => (
@@ -410,10 +414,13 @@ export default function Index() {
       {/* FOOTER */}
       <footer className="py-10 px-6" style={{ borderTop: "1px solid rgba(255,0,170,0.12)" }}>
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="font-display text-xl font-bold tracking-widest">
-            <span className="text-gradient">ИГРА</span>
-            <span className="text-[hsl(300,20%,95%)]"> РАЗУМА</span>
-          </div>
+          <a href="#" className="flex items-center gap-2">
+            <img src={LOGO_IMAGE} alt="Игра Разума" className="w-8 h-8 rounded object-cover" style={{ filter: "saturate(1.3) brightness(1.1)" }} />
+            <span className="font-display text-lg font-bold tracking-widest">
+              <span className="text-gradient">ИГРА</span>
+              <span className="text-[hsl(300,20%,95%)]"> РАЗУМА</span>
+            </span>
+          </a>
           <div className="font-body text-xs tracking-wider text-center" style={{ color: "hsl(270,5%,35%)" }}>
             © 2026 Игра Разума · Барные викторины · Все права защищены
           </div>
