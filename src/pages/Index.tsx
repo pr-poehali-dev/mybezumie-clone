@@ -70,7 +70,7 @@ export default function Index() {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#0d0d0d]/95 backdrop-blur-sm border-b border-[hsl(0,0%,15%)]" : ""}`}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="#" className="font-display text-2xl font-bold tracking-widest" style={{ color: "hsl(43,90%,55%)" }}>
-            QUIZ<span className="text-[hsl(45,30%,92%)]">BAR</span>
+            ИГРА<span className="text-[hsl(45,30%,92%)]"> РАЗУМА</span>
           </a>
 
           <div className="hidden md:flex items-center gap-8">
@@ -382,10 +382,10 @@ export default function Index() {
       <footer className="border-t border-[hsl(0,0%,12%)] py-10 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="font-display text-xl font-bold tracking-widest" style={{ color: "hsl(43,90%,55%)" }}>
-            QUIZ<span className="text-[hsl(45,30%,92%)]">BAR</span>
+            ИГРА<span className="text-[hsl(45,30%,92%)]"> РАЗУМА</span>
           </div>
           <div className="font-body text-xs text-[hsl(0,0%,35%)] tracking-wider text-center">
-            © 2026 QuizBar · Барные викторины · Все права защищены
+            © 2026 Игра Разума · Барные викторины · Все права защищены
           </div>
           <div className="flex items-center gap-4">
             {["Instagram", "MessageCircle", "Send"].map((icon, i) => (
