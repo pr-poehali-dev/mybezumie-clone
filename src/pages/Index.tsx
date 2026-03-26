@@ -118,6 +118,10 @@ export default function Index() {
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(200,0,140,0.18) 0%, transparent 70%)" }} />
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto animate-slide-up">
+          <div className="flex justify-center mb-6">
+            <img src={LOGO_IMAGE} alt="Игра Разума" className="w-28 h-28 md:w-36 md:h-36 rounded-2xl object-cover"
+              style={{ filter: "saturate(1.4) brightness(1.1)", boxShadow: "0 0 40px rgba(255,0,170,0.4), 0 0 80px rgba(180,0,200,0.2)" }} />
+          </div>
           <div className="inline-block border text-xs tracking-[0.3em] uppercase px-4 py-2 mb-8 font-body"
             style={{ borderColor: "rgba(255,0,170,0.35)", color: M }}>
             Барные викторины
