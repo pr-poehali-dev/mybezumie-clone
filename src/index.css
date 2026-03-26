@@ -4,46 +4,26 @@
 
 @layer base {
   :root {
-    --background: 270 15% 5%;
-    --foreground: 300 20% 95%;
-
-    --card: 270 12% 8%;
-    --card-foreground: 300 20% 95%;
-
-    --popover: 270 12% 8%;
-    --popover-foreground: 300 20% 95%;
-
-    --primary: 315 100% 55%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 270 10% 12%;
-    --secondary-foreground: 300 20% 95%;
-
-    --muted: 270 10% 12%;
-    --muted-foreground: 270 5% 55%;
-
-    --accent: 315 100% 55%;
-    --accent-foreground: 0 0% 100%;
-
+    --background: 0 0% 98%;
+    --foreground: 0 0% 6%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 6%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 6%;
+    --primary: 0 0% 6%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 6%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 94%;
+    --accent-foreground: 0 0% 6%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 270 10% 14%;
-    --input: 270 10% 14%;
-    --ring: 315 100% 55%;
-
-    --radius: 0.25rem;
-
-    /* Magenta palette */
-    --magenta: 315 100% 55%;
-    --magenta-dark: 310 90% 35%;
-    --magenta-glow: 315 100% 65%;
-    --purple-deep: 270 60% 15%;
-
-    /* Gradient stops */
-    --grad-from: #1a0a1e;
-    --grad-mid: #2d0a2e;
-    --grad-to: #0d0d0d;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 6%;
+    --radius: 0rem;
   }
 }
 
@@ -59,8 +39,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: "IBM Plex Sans", sans-serif;
-    background: linear-gradient(160deg, #1a0a1e 0%, #0d0d12 50%, #0a0010 100%);
-    background-attachment: fixed;
+    background-color: #f9f9f7;
   }
 
   h1,
@@ -69,7 +48,7 @@
   h4,
   h5 {
     font-family: "Oswald", sans-serif;
-    letter-spacing: 0.02em;
+    letter-spacing: -0.01em;
   }
 }
 
@@ -77,71 +56,44 @@
   .font-display {
     font-family: "Oswald", sans-serif;
   }
-
   .font-body {
     font-family: "IBM Plex Sans", sans-serif;
   }
 
-  .text-magenta {
-    color: hsl(var(--magenta));
-  }
-
-  .bg-magenta {
-    background-color: hsl(var(--magenta));
-  }
-
-  .bg-magenta-gradient {
-    background: linear-gradient(
-      135deg,
-      hsl(315, 100%, 55%) 0%,
-      hsl(280, 100%, 55%) 100%
-    );
-  }
-
-  .border-magenta {
-    border-color: hsl(var(--magenta));
-  }
-
-  .text-gradient {
-    background: linear-gradient(
-      135deg,
-      hsl(315, 100%, 65%) 0%,
-      hsl(270, 100%, 70%) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .bg-section-dark {
-    background: linear-gradient(180deg, #0a0010 0%, #110816 100%);
-  }
-
-  .card-dark {
-    background: linear-gradient(
-      135deg,
-      rgba(45, 10, 46, 0.5) 0%,
-      rgba(13, 13, 20, 0.8) 100%
-    );
-    border: 1px solid rgba(255, 0, 170, 0.12);
+  .animate-slide-up {
+    animation: slideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .animate-fade-in {
     animation: fadeIn 0.6s ease forwards;
   }
 
-  .animate-slide-up {
-    animation: slideUp 0.7s ease forwards;
+  .stagger-1 {
+    animation-delay: 0.1s;
+    opacity: 0;
   }
-
-  .neon-glow {
-    box-shadow:
-      0 0 20px hsla(315, 100%, 55%, 0.3),
-      0 0 60px hsla(315, 100%, 55%, 0.1);
+  .stagger-2 {
+    animation-delay: 0.25s;
+    opacity: 0;
   }
+  .stagger-3 {
+    animation-delay: 0.4s;
+    opacity: 0;
+  }
+  .stagger-4 {
+    animation-delay: 0.55s;
+    opacity: 0;
+  }
+}
 
-  .section-divider {
-    border-top: 1px solid rgba(255, 0, 170, 0.1);
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -152,33 +104,4 @@
   to {
     opacity: 1;
   }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse-glow {
-  0%,
-  100% {
-    box-shadow:
-      0 0 20px hsla(315, 100%, 55%, 0.4),
-      0 0 40px hsla(280, 100%, 55%, 0.2);
-  }
-  50% {
-    box-shadow:
-      0 0 40px hsla(315, 100%, 55%, 0.7),
-      0 0 80px hsla(280, 100%, 55%, 0.4);
-  }
-}
-
-.pulse-glow {
-  animation: pulse-glow 2.5s ease-in-out infinite;
 }
